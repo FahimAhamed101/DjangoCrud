@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+<div class="task-manager">
+{% block content %}
+<h1>Delete the task</h1>
+<a href="{% url 'tasks:tasks' %}">Home</a>
+
+     <div class="card-body">
+        <h5 class="card-title">Title:{{ tasks.title }}</h5>
+        
+        <p class="card-text">description : {{tasks.description }}</p>
+        
+        
+  
+      </div>
+<form method="POST">
+    {% csrf_token %}
+    <p>Delete this task? : "{{tasks}}"</p>
+    <input type="submit" value="Delete">
+
+</form>
+{% endblock content %}

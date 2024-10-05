@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Task manager</title>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+<body> 
+
+    <div class="container text-center">
+ {% block content %}
+
+        {% endblock content %}
+        <a href="{% url 'tasks:tasks' %}">Home</a>
+        <hr>
+        <div class="new-task-button">
+          <a class="btn btn-primary"  href="{% url 'tasks:create-task' %}">Creat new task</a>
+        </div>
+        <div class="incomplete-task-up">
+          <div class="incomplete-task">
+        
+            <p>You have {{task_count}} <span style="color: #FFBD44;">Incompleted</span> Tasks :(</p>
+        
+          </div>
+        </div>
+        </div> 
+
+       
+              
+                 
+              
+                   
+
+                </body>
+                </html>         
