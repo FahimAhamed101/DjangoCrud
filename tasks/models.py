@@ -10,7 +10,7 @@ class Tasks(models.Model):
     description= models.TextField(null=True,
                                blank=True)
     
-    due_date = models.DateTimeField(default=timezone.now)
+   
     priority = models.IntegerField(choices=((1, 'Low'), (2, 'Medium'), (3, 'High')), default=1)
     completed = models.BooleanField(default=False)
     created_at = models.DateTimeField(default=timezone.now)
@@ -28,6 +28,6 @@ class Tasks(models.Model):
 
 
 
-class FeedFile(models.Model):
+class ImageFile(models.Model):
     image = models.ImageField(upload_to="images", blank=False, null=True)
     tasks = models.ForeignKey(Tasks, on_delete=models.CASCADE,related_name='images',verbose_name=('image'), blank=True, null=True)

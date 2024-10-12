@@ -1,11 +1,11 @@
 from django import forms
-from .models import  Tasks,FeedFile
+from .models import  Tasks,ImageFile
         
 class TaskForm(forms.ModelForm):
    
     class Meta:
         model = Tasks
-        fields = ['title', 'description','completed','priority','due_date','created_at',]
+        fields = ['title', 'description','completed','priority','created_at',]
     
     def __init__(self, *args, **kwargs):
         super(TaskForm, self).__init__(*args, **kwargs)
@@ -37,6 +37,6 @@ class FileModelForm(forms.ModelForm):
     image = MultipleFileField(label='Select files', required=False)
     
     class Meta:
-        model = FeedFile
+        model = ImageFile
         fields = ['image']
        

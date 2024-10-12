@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormView
-from .models import  Tasks,FeedFile
+from .models import  Tasks,ImageFile
 from django.urls import reverse_lazy
 from .forms import TaskForm,FileModelForm
 # Create your views here.
@@ -45,7 +45,7 @@ class CreatTask(CreateView):
                 #task_instance.user = user
                 task_instance.save()
                 for f in files:
-                    file_instance = FeedFile(image=f, tasks=task_instance)
+                    file_instance = ImageFile(image=f, tasks=task_instance)
                     file_instance.save()
         else:
             form = TaskForm()
@@ -87,7 +87,7 @@ class EditTask(UpdateView,):
                 #task_instance.user = user
                 task_instance.save()
                 for f in files:
-                    file_instance = FeedFile(image=f, tasks=task_instance)
+                    file_instance = ImageFile(image=f, tasks=task_instance)
                     
                     file_instance.save()
         else:

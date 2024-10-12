@@ -9,14 +9,16 @@
 			  <div class="card item-card card-block">
 			  <h4 class="card-title text-right"><i class="material-icons">settings</i></h4>
 			 
-			  {% if task.images is True %} <p class="text-dark">images</p>
+		
 
-			  {% for i in task.images.set %} 
-			  <div>
-  <a href="{{ images.url.get_absolute_url }}"><img src="{{i.images.url}}"  alt="{{ tasks.title }}"> </a>
-   </div>
-	{% endfor %}
-{% endif %}
+			  {% for i in task.images.all %} 
+			  <div class="row">  <a href="{{ i.image.url.get_absolute_url }}">
+		 <img src="{{i.image.url}}" style="height:100px;"  alt="{{ tasks.title }} logo">
+		   </a>
+				
+			   </div>
+			   {% endfor %}
+
 			<a href="{{ product.get_url }}">	<h5 class="item-card-title mt-3 mb-3">{{ task.title }}</h5></a>
 				<p class="card-text">{{ task.description}}</p> 
 				<a href="{% url 'tasks:task' task.id %}" class="btn btn-block btn-primary">View Details </a>

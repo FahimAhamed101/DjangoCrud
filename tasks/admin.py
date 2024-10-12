@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import Tasks,FeedFile
+from .models import Tasks,ImageFile
 # Register your models here.
 
 
 
 admin.site.register(Tasks)
-admin.site.register(FeedFile)
+admin.site.register(ImageFile)

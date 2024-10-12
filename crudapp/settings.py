@@ -37,8 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+     'cloudinary_storage',
+    'cloudinary',
     'tasks',
-     'django_cleanup.apps.CleanupConfig',
+     
 ]
 
 MIDDLEWARE = [
@@ -122,10 +124,21 @@ STATICFILES_DIRS = [
     BASE_DIR/"static"
 ]
 #STATIC_ROOT = "static"
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR /'media'
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
+#MEDIA_ROOT = BASE_DIR /'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+MEDIA_URL = '/media/'  # or any prefix you choose
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'fahim1213456',
+    'API_KEY': '554889398149233',
+    'API_SECRET': 'xOh9Pctuw1UhBuRrj_XuP79ubbA'
+}
+
